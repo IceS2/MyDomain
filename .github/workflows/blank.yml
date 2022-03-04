@@ -28,4 +28,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Notify Metadata Changes
-        uses: ./github/actions/notify_metadata_changes
+        uses: ./.github/actions/notify_metadata_changes
