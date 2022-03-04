@@ -19,9 +19,10 @@ def send(message_body: dict) -> None:
     channel = connection.channel()
     channel.queue_declare('DomainGitops', durable=True)
 
-    channel.basic_publish(exchange='DataMesh', routing_key='domain.HasChanges', body=json.dumps(message_body))
+    channel.basic_publish(exchange='DataMesh', routing_key='domain.hasChanges', body=json.dumps(message_body))
 
     connection.close()
+    print(f"Sent message {message_body}")
 
 if __name__ == "__main__":
     changed_files = sys.argv[1]
