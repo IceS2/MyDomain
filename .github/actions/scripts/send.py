@@ -27,7 +27,7 @@ def send(message_body: dict) -> None:
     print(f"Sent message {message_body}")
 
 if __name__ == "__main__":
-    changed_files = sys.argv[1]
+    changed_files = sys.argv[1].split(' ')
     message_body = {}
     data_products = []
     for changed_file in changed_files:
