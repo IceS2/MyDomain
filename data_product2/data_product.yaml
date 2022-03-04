@@ -1,0 +1,7 @@
+name: DataPlatformProduct2
+status: dev
+envs:
+  dev:
+    data_classification: L2
+    contains_pii: true
+    amplitude: true

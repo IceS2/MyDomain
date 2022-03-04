@@ -1,0 +1,26 @@
+name: DataPlatformProduct1
+status: prod
+envs:
+  dev:
+    data_classification: L1
+    contains_pii: false
+    amplitude: true
+    emr:
+      master_instance_type: m5.medium
+      core_instance_type: m5.medium
+      core_instance_count: 2
+      release_label: emr-4.6.0
+      applications:
+        - Spark
+  prod:
+    data_classification: L1
+    contains_pii: false
+    amplitude: false
+    emr:
+      master_instance_type: m5.medium
+      core_instance_type: m5.medium
+      core_instance_count: 5
+      release_label: emr-4.6.0
+      applications:
+        - Spark
+
