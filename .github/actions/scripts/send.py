@@ -39,6 +39,6 @@ if __name__ == "__main__":
             print("In DP")
             data_products.append(parse_data_product_yaml(changed_file))
     if len(data_products) > 0:
-        message_body['data_products'] = data_products
+        message_body['data_products'] = [{**d, 'domain_name': message_body['domain']['name']} for d in data_products]
     if len(message_body) > 0:
         send(message_body)
