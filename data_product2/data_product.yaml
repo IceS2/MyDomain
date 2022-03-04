@@ -1,5 +1,5 @@
 name: DataPlatformProduct2
-status: dev
+status: devv
 envs:
   dev:
     data_classification: L2
