@@ -1,5 +1,5 @@
 name: DataPlatform
-status: propod
+status: prod
 envs:
   - dev
   - prod

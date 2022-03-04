@@ -17,7 +17,7 @@ def parse_data_product_yaml(data_product_file: str) -> dict:
 def send(message_body: dict) -> None:
     connection = pika.BlockingConnection(pika.URLParameters('amqp://admin:admin@rabbitmq:5672/'))
     channel = connection.channel()
-    channel.queue_declare('DomainGitops', durable=true)
+    channel.queue_declare('DomainGitops', durable=True)
 
     channel.basic_publish(exchange='DataMesh', routing_key='domain.HasChanges', body=json.dumps(message_body))
 
