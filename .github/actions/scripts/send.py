@@ -30,7 +30,7 @@ if __name__ == "__main__":
     for changed_file in changed_files:
         if changed_file.split('/')[-1] == 'domain.yaml':
             message_body['domain'] = parse_domain_yaml(changed_file)
-        elif changed_file.split('/')[-1] = 'data_product.yaml':
+        elif changed_file.split('/')[-1] == 'data_product.yaml':
             data_products.append(parse_data_product_yaml(changed_file))
     message_body['data_products'] = data_products
     send(message_body)
