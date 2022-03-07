@@ -1,5 +1,5 @@
 name: DataPlatformProduct1
-status: prod
+status: prodd
 envs:
   dev:
     data_classification: L1

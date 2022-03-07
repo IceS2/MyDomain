@@ -41,4 +41,5 @@ if __name__ == "__main__":
     if len(data_products) > 0:
         message_body['data_products'] = [{**d, 'domain_name': message_body['domain']['name']} for d in data_products]
     if len(message_body) > 0:
+        message_body['commit'] = sys.argv[2]
         send(message_body)
