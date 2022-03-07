@@ -19,5 +19,5 @@ runs:
       shell: bash
     - name: Send Message to RabbitMQ
       run: |
-        python .github/actions/scripts/send.py "${{ steps.changed-files.outputs.all_changed_files }}" "${{ format('https://github.com/{}/commit/{}', github.repository, github.sha) }}"
+        python .github/actions/scripts/send.py "${{ steps.changed-files.outputs.all_changed_files }}" "${{ format('https://github.com/{0}/commit/{1}', github.repository, github.sha) }}"
       shell: bash
