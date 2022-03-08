@@ -26,6 +26,11 @@ def send(message_body: dict) -> None:
     connection.close()
     print(f"Sent message {message_body}")
 
+def get_domain_name():
+    with open('domain.yaml', 'r') as f:
+        content = yaml.safe_load(f)
+    return content['name']
+
 if __name__ == "__main__":
     changed_files = sys.argv[1].split(' ')
     message_body = {}
@@ -39,7 +44,8 @@ if __name__ == "__main__":
             print("In DP")
             data_products.append(parse_data_product_yaml(changed_file))
     if len(data_products) > 0:
-        message_body['data_products'] = [{**d, 'domain_name': message_body['domain']['name']} for d in data_products]
+        domain_name = get_domain_name()
+        message_body['data_products'] = [{**d, 'domain_name': domain_name} for d in data_products]
     if len(message_body) > 0:
         message_body['commit'] = sys.argv[2]
         send(message_body)
