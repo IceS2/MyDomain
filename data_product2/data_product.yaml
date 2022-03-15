@@ -2,6 +2,6 @@ name: DataPlatformProduct2
 status: dev
 envs:
   dev:
-    data_classification: L1
+    data_classification: L3
     contains_pii: true
     amplitude: false
